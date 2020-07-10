@@ -1,7 +1,11 @@
 FROM v12nio/codestream-ci:latest
 LABEL maintainer="blog.v12n.io"
 
+# Expose ports for Kickstart files
 EXPOSE 8601-8610/tcp
+
+# Set working directory
+WORKDIR /packer
 
 # Install Packer
 ENV PACKER_BIN_DIR /usr/local/bin
