@@ -5,9 +5,8 @@ LABEL maintainer="blog.v12n.io"
 WORKDIR /packer
 
 # Install Packer
-ENV PACKER_VER=1.6.1
 ENV PACKER_BIN_DIR=/usr/local/bin
-ENV PACKER_ZIP=https://releases.hashicorp.com/packer/$PACKER_VER/packer_$PACKER_VER_linux_amd64.zip
+ENV PACKER_ZIP=https://releases.hashicorp.com/packer/1.6.1/packer_1.6.1_linux_amd64.zip
 RUN curl -sSLo /tmp/packer.zip $PACKER_ZIP && \
     unzip /tmp/packer.zip -d $PACKER_BIN_DIR && \
     rm /tmp/packer.zip
