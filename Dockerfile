@@ -18,7 +18,7 @@ ENV PATH $PATH:$PACKER_BIN_DIR
 RUN type packer
 
 # Install Packer Windows Update Provisioner
-ENV PACKER_WU_TAR=https://github.com/rgl/packer-provisioner-windows-update/releases/download/v${PROVISIONER_VER}/packer-provisioner-windows-update-linux.tgz
+ENV PACKER_WU_TAR=https://github.com/rgl/packer-provisioner-windows-update/releases/download/v${PROVISIONER_VER}/packer-provisioner-windows-update_${PROVISIONER_VER}_linux_amd64.tar.gz
 RUN curl -sSLo /tmp/packer-wu.tar.gz $PACKER_WU_TAR && \
     tar -zxvf /tmp/packer-wu.tar.gz --directory $PACKER_BIN_DIR && \
     chmod 755 $PACKER_BIN_DIR/packer-provisioner-windows-update && \
