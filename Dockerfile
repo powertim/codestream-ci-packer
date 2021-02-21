@@ -1,5 +1,5 @@
 FROM v12nio/codestream-ci:latest
-LABEL maintainer="blog.v12n.io"
+LABEL maintainer="blog.v12n.io" packer.version="1.7.0" provisioner.version="0.11.0"
 
 # Set working directory
 WORKDIR /packer
@@ -7,7 +7,7 @@ WORKDIR /packer
 # Install Packer
 ENV PACKER_BIN_DIR=/usr/local/bin
 ENV PACKER_VER=1.7.0
-ENV PROVISIONER_VER=0.10.1
+ENV PROVISIONER_VER=0.11.0
 ENV PACKER_ZIP=https://releases.hashicorp.com/packer/${PACKER_VER}/packer_${PACKER_VER}_linux_amd64.zip
 RUN curl -sSLo /tmp/packer.zip $PACKER_ZIP && \
     unzip /tmp/packer.zip -d $PACKER_BIN_DIR && \
