@@ -9,12 +9,13 @@ RUN tdnf install -y xorriso && \
 
 # Install Packer
 FROM baseimage as packerimage
-
+ARG VERSION
 ADD https://releases.hashicorp.com/packer/$VERSION/packer_$VERSION_linux_amd64.zip ./
-ADD VERSION .
 
 RUN unzip packer_$VERSION_linux_amd64.zip -d /bin
 RUN rm -f packer_$VERSION_linux_amd64.zip
+
+ADD VERSION .
 
 # Final tidying
 FROM packerimage as finalimage
