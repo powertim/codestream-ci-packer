@@ -4,7 +4,7 @@ LABEL maintainer="blog.v12n.io"
 LABEL version="$VERSION"
 
 # Update packages and install new ones
-RUN tdnf install -y xorriso && \
+RUN tdnf install -y xorriso jq && \
     tdnf clean all
 
 # Install Packer
