@@ -4,9 +4,7 @@ LABEL maintainer="blog.v12n.io"
 LABEL version="$VERSION"
 
 # Update packages and install new ones
-RUN tdnf update -y && \
-    tdnf install -y curl unzip git wget tar bindutils coreutils xorriso jq && \
-    tdnf clean all && \
+RUN tdnf install -y curl unzip git wget tar bindutils coreutils xorriso jq && \
     tdnf autoremove -y && \
     tdnf clean all
 
