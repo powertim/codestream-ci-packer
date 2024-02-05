@@ -13,7 +13,6 @@ ADD requirements.txt .
 
 # Install pip requirements
 RUN pip3 install -r requirements.txt && \
-    tdnf autoremove -y && \
     tdnf clean all
 
 # Install Packer
