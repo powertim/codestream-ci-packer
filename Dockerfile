@@ -13,7 +13,7 @@ ADD requirements.txt .
 
 # Install pip requirements & cleanup
 RUN pip3 install -r requirements.txt && \
-    tdnf remove python3-pip && \
+    tdnf remove -y python3-pip && \
     tdnf autoremove -y && \
     tdnf clean all
 
