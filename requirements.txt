@@ -57,7 +57,6 @@ netaddr
 openshift
 psutil
 pyOpenSSL
-pykerberos
 pymongo
 pyparsing
 python-memcached
