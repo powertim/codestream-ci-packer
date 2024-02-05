@@ -5,7 +5,7 @@ LABEL version="$VERSION"
 ENV LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8 LANGUAGE=en_US.UTF-8
 
 # Update packages and install new ones
-RUN tdnf install -y curl unzip git wget tar bindutils coreutils xorriso jq mkpasswd ansible python3-pip gcc python3-dev libkrb5-dev && \
+RUN tdnf install -y curl unzip git wget tar bindutils coreutils xorriso jq mkpasswd ansible python3-pip gcc libkrb5-dev && \
     pip3 install pip --upgrade
     
 # Copy pip requirements file
