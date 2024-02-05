@@ -12,7 +12,7 @@ RUN tdnf install -y curl unzip git wget tar bindutils coreutils xorriso jq mkpas
 ADD requirements.txt .
 
 # Install pip requirements
-RUN pip3 install -r requirements.txt \
+RUN pip3 install -r requirements.txt && \
     tdnf autoremove -y && \
     tdnf clean all
 
