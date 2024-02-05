@@ -5,7 +5,7 @@ LABEL version="$VERSION"
 ENV LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8 LANGUAGE=en_US.UTF-8
 
 # Update packages and install new ones
-RUN tdnf install -y curl unzip git wget tar bindutils coreutils xorriso jq mkpasswd ansible python3-pip gcc python3-devel && \
+RUN tdnf install -y curl unzip git wget tar bindutils coreutils xorriso jq mkpasswd ansible python3-pip && \
     pip3 install pip --upgrade
     
 # Copy pip requirements file
@@ -13,6 +13,7 @@ ADD requirements.txt .
 
 # Install pip requirements & cleanup
 RUN pip3 install -r requirements.txt && \
+    tdnf remove python3-pip && \
     tdnf autoremove -y && \
     tdnf clean all
 
