@@ -11,8 +11,9 @@ RUN tdnf install -y curl unzip git wget tar bindutils coreutils xorriso jq mkpas
 # Copy pip requirements file
 ADD requirements.txt .
 
-# Install pip requirements
+# Install pip requirements & cleanup
 RUN pip3 install -r requirements.txt && \
+    tdnf autoremove -y && \
     tdnf clean all
 
 # Install Packer
